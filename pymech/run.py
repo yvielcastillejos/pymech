@@ -15,7 +15,13 @@ print(files)
 Nus = []
 times = []
 turbratio = []
+files1 =[]
 for file in files:
+    if file[0:3]=='dd0':
+        files1.append(file)
+    else:
+        continue
+for file in files1:
     data = neksuite.readnek(f"{PATH}/{file}")
     lr1 = data.lr1
     Uy = extract_data2D.reshapenek(data.elems.vel[1],lr1)
